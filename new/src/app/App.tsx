@@ -22,14 +22,14 @@ export default function App() {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
-    message: "I want to join the movement. Send me emails. "
+    message: "I want to join the movement. I agree to, and daresay even look forward to, getting emails."
   });
 
   const scrollToForm = (addInviteText: boolean = false) => {
     formRef.current?.scrollIntoView({ behavior: 'smooth' });
     
     if (addInviteText) {
-      const inviteSuffix = " I'd also like an invitation to try UN-001, because: ";
+      const inviteSuffix = " I'd also like an invitation for UN-001. (We'd appreciate if you tell us a bit about your thoughts on making music here)";
       if (!formData.message.includes(inviteSuffix)) {
         setFormData(prev => ({
           ...prev,
