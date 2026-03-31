@@ -1,5 +1,6 @@
 # dependencies
 node_modules/
+**/node_modules/
 
 # logs
 logs
@@ -16,10 +17,13 @@ pnpm-debug.log*
 
 # build output
 build/
+dist/
+**/dist/
 .next/
 out/
 .vercel/
 coverage/
+docs/
 
 # OS files
 .DS_Store
