@@ -22,14 +22,14 @@ export default function App() {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
-    message: "I want to join the movement. I agree to, and daresay even look forward to, getting emails."
+    message: ""
   });
 
   const scrollToForm = (addInviteText: boolean = false) => {
     formRef.current?.scrollIntoView({ behavior: 'smooth' });
     
     if (addInviteText) {
-      const inviteSuffix = " I'd also like an invitation for UN-001. (We'd appreciate if you tell us a bit about your thoughts on making music here)";
+      const inviteSuffix = "I'd like an invitation for UN-001. (We'd appreciate if you tell us a bit about your thoughts on making music here)";
       if (!formData.message.includes(inviteSuffix)) {
         setFormData(prev => ({
           ...prev,
@@ -80,17 +80,19 @@ export default function App() {
         <div className="border-t border-black pt-8">
           <div className="space-y-8 text-2xl md:text-[32px] leading-[1.1] tracking-tight max-w-5xl">
             <p>
-              There is an unstoppable movement in electronic music:<br/> 
-              music creation and live performance becoming one.
+              There is an unstoppable movement in electronic music: 
+              creation and live performance becoming one.
             </p>
             <p>
               Untz exists at the forefront of this movement. Our mission is to make music creation intuitive and fast enough to bring composing and performing together into a single motion—whether on a festival stage or on the couch.
             </p>
             <p>
-              The instruments we design and engineer strive to collaborate with you as ideas turn into music in realtime. Together, you keep things moving, staying in the flow and in the moment.
+              When a musician connects to the whispers of the universe and creates something true on the spot, they elevate the moment into something special. 
+              On dance floors, at concert venues, in homes.
             </p>
             <p>
-              Because the real magic of music is in that moment. When a musician connects to the whispers of the universe and creates something true. The truth to magical moments: on dance floors, at concert venues, in homes.
+              The instruments we design and engineer strive to collaborate with you as ideas turn into music in realtime.
+              Together, you keep things moving, staying in the flow, making magic in the moment.
             </p>
           </div>
         </div>
@@ -123,7 +125,7 @@ export default function App() {
 
       {/* Join Section */}
       <section ref={formRef} className="py-12 max-w-[1280px] mx-auto px-8 md:px-[33px] mb-32">
-        <h2 className="text-3xl md:text-[40px] font-medium mb-4">Join the movement</h2>
+        <h2 className="text-3xl md:text-[40px] font-medium mb-4">Contact</h2>
         <div className="border-t border-black pt-8">
           <form action="https://submit-form.com/UONAOPvK" className="grid grid-cols-1 md:grid-cols-3 gap-4">
             <div className="relative">
@@ -160,6 +162,10 @@ export default function App() {
                 rows={4}
                 className="w-full p-6 bg-[#f1f1f1] rounded-2xl text-lg placeholder:text-black/50 focus:outline-none focus:ring-2 focus:ring-black/5 transition-all resize-none"
               />
+              <div class="flex items-center ps-2">
+                  <input id="mailinglist" type="checkbox" name="mailinglist" class="w-4 h-4 border border-default-medium rounded-xs bg-neutral-secondary-medium"/>
+                  <label for="mailinglist" class="select-none w-full py-4 ms-2 text-md font-normal">Let me know about new instruments and invite-only previews</label>
+              </div>  
               <button 
                 type="submit"
                 className="w-full h-[62px] bg-black text-white rounded-2xl text-lg font-bold hover:bg-zinc-800 transition-colors cursor-pointer"
